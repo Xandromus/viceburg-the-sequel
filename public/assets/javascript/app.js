@@ -33,12 +33,13 @@ $(document).ready(function() {
     // variables to obtain burger's id and status
     let id = $(this).data("burgerid");
     let newDevoured = $(this).data("newdevoured");
+    console.log(id);
 
     // devoured state is false, set it to true and vice versa
-    if (newDevoured === 0) {
-      newDevoured = 1;
+    if (newDevoured === false) {
+      newDevoured = true;
     } else {
-      newDevoured = 0;
+      newDevoured = false;
     }
 
     // assign the changed devoured state to its key inside an object
