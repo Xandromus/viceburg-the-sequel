@@ -1,34 +1,21 @@
-// variable declarations for required files/functions
-let orm = require("./../config/orm.js");
-
-// burger model object
-let burger = {
-
-  selectAll: function (cb) { // function to select all items through the ORM
-    orm.selectAll("burgers", function (res) {
-      // pass the table name and callback function in as arguments
-      cb(res);
-    });
-  },
-  insertOne: function (vals, cb) { // function to add a new burger through the ORM
-    orm.insertOne("burgers", "burger_name", vals, function (res) {
-      // pass the table name, column name, new burger name, and callback function in as arguments 
-      cb(res);
-    });
-  },
-  changeOne: function (objColVals, condition, cb) { // function to update a burger through the ORM
-    orm.changeOne("burgers", objColVals, condition, function (res) {
-      // pass the table name, the burger's new devoured state, the id of the burger, and callback function in as arguments
-      cb(res);
-    });
-  },
-  deleteOne: function (condition, cb) { // function to delete a burger through the ORM
-    orm.deleteOne("burgers", condition, function (res) {
-      // pass the table name, the id of the burger, and callback function in as arguments
-      cb(res);
-    });
-  }
+module.exports = function(sequelize, DataTypes) {
+  var Burger = sequelize.define("Burger", {
+    burger_name: {
+      type: DataTypes.STRING,
+      // AllowNull is a flag that restricts a todo from being entered if it doesn't
+      // have a text value
+      allowNull: false,
+      // len is a validation that checks that our todo is between 1 and 140 characters
+      validate: {
+        len: [1, 140]
+      }
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      // defaultValue is a flag that defaults a new todos complete value to false if
+      // it isn't supplied one
+      defaultValue: 0
+    }
+  });
+  return Burger;
 };
-
-// export burger model for controller to use
-module.exports = burger;

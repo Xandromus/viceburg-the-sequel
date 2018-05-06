@@ -8,6 +8,8 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+
+
 // sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -23,8 +25,7 @@ app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, '/public')));
 
 // import routes and give the server access to them
-let routes = require("./controllers/burgers_controllers.js");
-app.use(routes);
+require("./routes/api-routes.js")(app);
 
 // starts the server to begin listening
 // =============================================================
