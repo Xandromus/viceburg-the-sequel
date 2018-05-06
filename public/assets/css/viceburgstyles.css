@@ -1,0 +1,250 @@
+/* BASIC STYLES */
+
+html {
+    max-height: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+body {
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    font-family: 'Reem Kufi', sans-serif;
+    color: #D71016;
+    font-size: 1.2rem;
+}
+
+body::after {
+    content: "";
+    background: url(../images/burger.jpg) no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    color: #151515;
+    text-transform: capitalize;
+}
+
+
+
+/* WRAPPER */
+
+.wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    padding: 0 0 100px;
+}
+
+
+
+/* HEADER */
+
+header {
+    height: 100px;
+    padding-top: 10px;
+    font-family: 'Arvo', serif;
+    color: #151515;
+}
+
+.logo {
+    font-size: 36px;
+}
+
+.logo-holder {
+    max-height: 100px;
+    max-width: 200px;
+    margin-right: 10px;
+}
+
+.img-logo {
+    height: 80px;
+}
+
+
+
+/* MAIN */
+
+main {
+    margin-bottom: auto;
+    position: relative;
+}
+
+
+
+/* MIDDLE */
+
+.middle {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+
+/* CARD AREA */
+
+.card {
+    background-color: rgba(255, 255, 255, .7);
+    padding: 10px;
+}
+
+
+
+/* BUTTONS */
+
+.btn-fire,
+.btn-tempt,
+.btn-add {
+    background-color: #3772FF;
+    color: white;
+}
+
+.btn-fire:hover,
+.btn-tempt:hover,
+.btn-add:hover {
+    background-color: #D71016;
+}
+
+.btn-update,
+.btn-purge {
+    background-color: #D71016;
+    color: white;
+}
+
+.btn-update:hover,
+.btn-purge:hover {
+    background-color: #3772FF;
+}
+
+
+
+/* INPUT */
+
+.input-group {
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    clear: both;
+    text-align: center;
+    font-family: 'Arvo', serif;
+    color: #151515;
+}
+
+footer p {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 991px) {
+    h2,
+    .logo {
+        font-size: 1.4rem;
+    }
+    header {
+        font-size: 1.2rem;
+    }
+    ul {
+        padding-left: 0px;
+    }
+    .input-group {
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    header {
+        font-size: 1rem;
+    }
+    h2,
+    .logo {
+        font-size: 1.2rem;
+    }
+    .logo-holder {
+        max-height: 45px;
+    }
+    .img-logo {
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 510px) {
+    header {
+        font-size: .8rem;
+    }
+    .logo-holder {
+        max-height: 25px;
+    }
+    .img-logo {
+        height: 20px;
+    }
+    .input-group {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    body {
+        font-size: .8rem;
+    }
+    header {
+        height: 80px;
+        font-size: .7rem;
+    }
+    .logo-holder {
+        max-height: 20px;
+        margin-right: 0px;
+    }
+    .img-logo {
+        height: 15px;
+    }
+    .btn-fire,
+    .btn-purge,
+    .btn-tempt {
+        font-size: .7rem;
+    }
+    footer p {
+        font-size: 1.1rem;
+    }
+}
