@@ -1,5 +1,5 @@
 // CLICK HANDLERS AND AJAX
-$(function () {
+$(document).ready(function() {
 
   // click handler for new burger
   $("#addburger").on("submit", function (event) {
@@ -8,11 +8,8 @@ $(function () {
 
     // variable declaration for user input
     let newBurger = {
-      burger: $("#burger").val().trim().toLowerCase()
+      burger_name: $("#burger").val().trim().toLowerCase()
     };
-
-    // make sure that the user didn't enter blank input
-    if (newBurger.burger !== "") {
 
       // Send the POST request and the new burger name
       $.ajax("/api/burgers", {
@@ -28,7 +25,6 @@ $(function () {
 
       // reset the input value to blank
       $("#burger").val("");
-    }
   });
 
   // click handler for changing status of burger
