@@ -1,24 +1,24 @@
-module.exports = function(sequelize, DataTypes) {
+// model export for burgers table/model
+module.exports = function (sequelize, DataTypes) {
   var Burger = sequelize.define("Burger", {
     burger_name: {
       type: DataTypes.STRING,
-      // AllowNull is a flag that restricts a todo from being entered if it doesn't
-      // have a text value
+      // restrict burger name from being entered if it doesn't have a text value
       allowNull: false,
-      // len is a validation that checks that our todo is between 1 and 140 characters
+      // make sure the burger name is between 6 (for at least 'burger') and 140 characters
       validate: {
-        len: [1, 140]
+        len: [6, 140]
       }
     },
     devoured: {
       type: DataTypes.BOOLEAN,
-      // defaultValue is a flag that defaults a new todos complete value to false if
-      // it isn't supplied one
+      // set default value for devaured to false
       defaultValue: 0
     }
   }, {
-    timestamps: false
-  }
-);
+      // disable timestamps
+      timestamps: false
+    }
+  );
   return Burger;
 };

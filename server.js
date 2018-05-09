@@ -8,6 +8,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// variable for sequelize models
 let db = require("./models");
 
 // sets up the Express app to handle data parsing
@@ -28,8 +29,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 require("./routes/api-routes.js")(app);
 require("./routes/html-routes.js")(app);
 
-// starts the server to begin listening
-// =============================================================
+// syncs all defined models to the database and starts the server to begin listening
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);

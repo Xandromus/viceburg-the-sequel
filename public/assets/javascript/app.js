@@ -1,5 +1,5 @@
 // CLICK HANDLERS AND AJAX
-$(document).ready(function() {
+$(document).ready(function () {
 
   // click handler for new burger
   $("#addburger").on("submit", function (event) {
@@ -11,20 +11,20 @@ $(document).ready(function() {
       burger_name: $("#burger").val().trim().toLowerCase()
     };
 
-      // Send the POST request and the new burger name
-      $.ajax("/api/burgers", {
-        type: "POST",
-        data: newBurger
-      }).then(
-        function () {
-          console.log("added new burger");
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
+    // Send the POST request and the new burger name
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function () {
+        console.log("added new burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
 
-      // reset the input value to blank
-      $("#burger").val("");
+    // reset the input value to blank
+    $("#burger").val("");
   });
 
   // click handler for changing status of burger
