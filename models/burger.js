@@ -16,6 +16,9 @@ module.exports = function(sequelize, DataTypes) {
       // it isn't supplied one
       defaultValue: 0
     }
-  });
+  }, {
+    timestamps: false
+  }
+);
   return Burger;
 };
